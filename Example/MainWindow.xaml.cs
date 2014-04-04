@@ -20,7 +20,7 @@ namespace Example
             Resources["VariableFontSize"] = 8d;
         }
 
-        private void OnResourceChanged_VariableFontSize(object sender, ResourceChangedEventArgs e)
+        private void OnResourceChanged_VariableFontSize(object sender, ResourceChangeEventArgs e)
         {
             MessageBox.Show("This is a popup triggered by an event handler that subscribed to ResourceChangeEventBehavior ResourceChanged event!!");
         }

@@ -52,7 +52,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResourceChangedEventArgs.cs" />
+    <Compile Include="ResourceChangeEventArgs.cs" />
     <Compile Include="ResourceChangeEventBehavior.cs" />
   </ItemGroup>
   <ItemGroup>

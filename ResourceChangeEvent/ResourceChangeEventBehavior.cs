@@ -9,7 +9,7 @@ namespace Itschwabing.Libraries.ResourceChangeEvent
         public static readonly DependencyProperty ResourceProperty = DependencyProperty.Register(
             "Resource", typeof(object), typeof(ResourceChangeEventBehavior), new PropertyMetadata(default(object), ResourceChangedCallback));
 
-        public event EventHandler<ResourceChangedEventArgs> ResourceChanged;
+        public event EventHandler<ResourceChangeEventArgs> ResourceChanged;
 
         public object Resource
         {
@@ -23,12 +23,12 @@ namespace Itschwabing.Libraries.ResourceChangeEvent
             if (resourceChangeNotifier == null)
                 return;
 
-            resourceChangeNotifier.OnResourceChanged(new ResourceChangedEventArgs(args.OldValue, args.NewValue));
+            resourceChangeNotifier.OnResourceChanged(new ResourceChangeEventArgs(args.OldValue, args.NewValue));
         }
 
-        private void OnResourceChanged(ResourceChangedEventArgs args)
+        private void OnResourceChanged(ResourceChangeEventArgs args)
         {
-            EventHandler<ResourceChangedEventArgs> handler = ResourceChanged;
+            EventHandler<ResourceChangeEventArgs> handler = ResourceChanged;
             if (handler != null) handler(this, args);
         }
     }
